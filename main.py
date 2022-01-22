@@ -1,24 +1,20 @@
+### 학습내용점검
+# 2
+f=36.5
+c=float(5/9*(f-32))
+print(c)
+
+c=5/9*float(f-32)
+print(c)
+
+
 ### 도전하기
-#1
-num=5
-print(num)
+# 1
+print(float("12.34"))
 
-#2
-score=0
-print(score)
-score=score+1
-print(score)
+# 2
+print(int(56.78)) # 버림
 
-#3
-my_name="박예은"
-print(my_name)
-
-#4
-DayPerWeek=7
-HoursPerDay=24
-MinutesPerHour=60
-print(DayPerWeek*HoursPerDay*MinutesPerHour)
-
-#5
-HoursPerDay=26
-print(DayPerWeek*HoursPerDay*MinutesPerHour)
+# 3
+print(type("50"))
+print(int("50"))
