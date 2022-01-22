@@ -1,4 +1,3 @@
-'''
 ## 예제 5.1
 print("Enter your name.")
 name = input()
@@ -20,7 +19,7 @@ f = float(input("fahrenheit temperature : "))
 c = 5.0/9*(f-32)
 print(c)
 
-
+'''
 ## 예제 5.4 (왜 안될까?!)
 import urllib.request
 file = urllib.request.urlopen("http://helloworldbbook.com/data/message.txt")
