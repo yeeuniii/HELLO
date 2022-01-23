@@ -1,4 +1,3 @@
-"""
 # 예제 7.1
 num1 = int(input("Enter the first number."))
 num2 = int(input("Enter the second number."))
@@ -61,7 +60,7 @@ if sex == "f" and (10 <= age <= 12):
     print("축구팀에서 뛸 수 있습니다.")
 else:
     print("조건에 부합하지 않습니다.")
-"""
+
 # 보너스
 import easygui
 sex = easygui.choicebox("성별을 고르시오. \n 단, 여자는 f, 남자는 m", choices=["f","m"])
