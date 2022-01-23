@@ -1,5 +1,5 @@
 import easygui
-'''
+
 user_response = easygui.msgbox("Hello")
 print(user_response)
 
@@ -25,7 +25,7 @@ easygui.msgbox("You choice "+flavor)
 ##
 num = easygui.integerbox("Select integer number among 1~10", lowerbound=1, upperbound=10)
 print(num+3)
-'''
+
 
 ## 도전하기
 # 1
