@@ -53,20 +53,42 @@ else:
 # 2
 import easygui
 sex = easygui.choicebox("성별을 고르시오. \n 단, 여자는 f, 남자는 m", choices=["f","m"])
-sex = input('성별을 입력하세요. \n 단, 여자는 f, 남자는 m \n')
 age = int(input("나이를 입력하시오."))
-
 if sex == "f" and (10 <= age <= 12):
     print("축구팀에서 뛸 수 있습니다.")
 else:
     print("조건에 부합하지 않습니다.")
 
-# 보너스
-import easygui
-sex = easygui.choicebox("성별을 고르시오. \n 단, 여자는 f, 남자는 m", choices=["f","m"])
+# 보너스(사용자가 여자가 아니라면 나이를 묻지 않도록.)
+sex = input("성별을 고르시오. \n 단, 여자는 f, 남자는 m")
 if sex == "f":
     age = int(input("나이를 입력하시오."))
-elif 10 <= age <= 12:
-    print("축구팀에서 뛸 수 있습니다.")
+    if 10 <= age <= 12:
+        print("축구팀에서 뛸 수 있습니다.")
+    else:
+        print("적합한 나이가 아닙니다.")
 else:
-    print("조건에 부합하지 않습니다.")
+    print("여자만 축구팀에서 뛸 수 있습니다.")
+
+# 3
+size = int(input("휘발유 탱크의 크기가 몇 리터입니까?\n"))
+percent = int(input("휘발유 탱크는 현재 얼마나 차 있습니까? \n(%로 나타낼 것. 예를 들어, 반이 차 있으면 50%)\n"))
+km = int(input("여러분의 차는 휘발유 1리터에 몇 킬로미터 갑니까?\n"))
+go = (size-5)*(percent/100)*km
+print("Size of tank:", size,
+      "\npercent full:", percent,
+      "\nkm per liter:", km,
+      "\nYou can go another", go, "km",
+      "\nThe next gas station is 200 km away")
+if go >= 200:
+    print("You can wait for the next station.")
+else:
+    print("Get gas now!")
+
+# 4
+password = "0913"
+answer = input("비밀번호를 입력하시오.")
+if answer == password:
+    print("통과되었습니다.")
+else:
+    print("올바른 비밀번호가 아닙니다.")
