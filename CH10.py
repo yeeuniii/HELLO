@@ -3,7 +3,7 @@ import pygame
 import sys
 import random
 
-os.chdir("C:/Users/박예은/PycharmProjects/pythonProject/HELLO/One_Big_Archive/images")
+os.chdir("C:\\Users\\박예은\\AppData\\Local\\Programs\\Python\\Python37\\One_Big_Archive\\images")
 
 skier_images = ["skier_down.png", "skier_right1.png",
                 "skier_right2.png", "skier_left2.png", "skier_left1.png"]
