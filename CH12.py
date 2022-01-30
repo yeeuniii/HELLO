@@ -42,7 +42,7 @@ if var in letters:
     letters.remove(var)
 print(letters)
 
-print(letters.index("a"))
+# print(letters.index("a"))
 if var in letters:
     print(letters.index(var))
 
