@@ -55,7 +55,7 @@ print("my_price (outside function) =", my_price)
 
 # 도전하기
 # 1
-def drawmyname():
+def printmyname():
     print("Y     Y  EEEEEE  EEEEEE  U     U  N     N")
     print(" Y   Y   E       E       U     U  NN    N")
     print("  Y Y    EEEE    EEEE    U     U  N N   N")
@@ -63,10 +63,10 @@ def drawmyname():
     print("   Y     E       E        U   U   N   N N")
     print("   Y     EEEEEE  EEEEEE    UUU    N    NN")
 
-drawmyname()
+printmyname()
 
 for i in range(5):
-    drawmyname()
+    printmyname()
 
 # 2
 def pers_inf(name, address, house_num, si, do, zip_code, country):
