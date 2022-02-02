@@ -1,0 +1,37 @@
+파이게임 (pygame)
+
+게임을 만드는 라이브러리
+이때, 게임은 플레이어와 상호작용하는 프로그램
+=> 파이게임 프로그램은 항상 이벤트루프(event loop)가 실행되어야 함 (이벤트루프는 사용자의 입력을 끊임없이 검사함)
+& 이벤트루프가 멈추면 프로그램도 종료
+e.g.
+while True:
+    pass
+이때, 프로그램이 영원히 실행된다면 어떻게 중지할 수 있을까? (pg. 219)
+
+# pygame.draw.
+# 원(circle)
+pygame.draw.circle(어느 화면에, 색상, 위치, 반지름, 선의 두께)
+# 사각형(rect(rectangle))
+Rect(left, top, width, height)
+
+ # 색상
+ [R, G, B]
+  0 = 검은색, 255 = 흰색
+  세 개의 정수로 된 리스트
+ # from pygame.color import THECOLORS
+   THECOLORS["red"] 와 같이 사용
+
+ # 위치
+ [수평(x축), 수직(y축)]
+ [0, 0] = 좌측 상단
+
+ # 선 굵기
+ 0 = 도형의 내부를 채움
+
+
+# 파이게임 표면(surface)
+출력표면(display surface) / 더블버퍼(double-buffered) : 우리가 화면을 통해 보는 것
+ㄴ 두 개의 복사본 존재
+
+
