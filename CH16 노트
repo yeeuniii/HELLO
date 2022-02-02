@@ -11,15 +11,26 @@ while True:
 
 # pygame.draw.
 # 원(circle)
-pygame.draw.circle(어느 화면에, 색상, 위치, 반지름, 선의 두께)
-# 사각형(rect(rectangle))
-Rect(left, top, width, height)
+pygame.draw.circle((그림을 그릴) 표면, 색상, 위치, 반지름, 선의 굵기)
+# 사각형(rectangle)
+Rect(left, top, width, height)  # 튜플
+pygame.draw.rect(표면, 색상, rect, 선의 굵기)
+                           # rect = [left, top, width, height]
+# 선 잇기
+pygame.draw.lines(표면, 색상, 닫힌도형 여부, 연결한 점들의 리스트, 선의 굵기)
+                            (처음 점과 마지막 점을 이으면 닫힌도형 = True)
+# 호(arc)
+arc(surface, color, rect, start_angle, stop_angle, width=1)
+# 타원(ellipse)
+ellipse(surface, color, rect, width=0)
+# 다각형(polygon)
+polygon(surface, color, points, width=0)
 
  # 색상
  [R, G, B]
   0 = 검은색, 255 = 흰색
   세 개의 정수로 된 리스트
- # from pygame.color import THECOLORS
+ # from pygame.colordict import THECOLORS
    THECOLORS["red"] 와 같이 사용
 
  # 위치
@@ -27,11 +38,25 @@ Rect(left, top, width, height)
  [0, 0] = 좌측 상단
 
  # 선 굵기
- 0 = 도형의 내부를 채움
-
+ 0 = 도형의 내부를 채움 (default)
 
 # 파이게임 표면(surface)
 출력표면(display surface) / 더블버퍼(double-buffered) : 우리가 화면을 통해 보는 것
 ㄴ 두 개의 복사본 존재
 
+Surface.set_at([좌표], [색깔]) # 표면(Surface)의 개별 픽셀 제어, i.e, 해당 좌죠의 색상만 변경 가능
+Surface.get_at([확인하고 싶은 픽셀의 좌표]) # 특정 위치의 픽셀에 어떤 색상이 적용되어 있는지 확인 가능
 
+# 이미지
+pygame.image.load()     # 이미지 불러오기
+                        ; 이렇게 불러와진 이미지 또한 표면을 나타내는 객체.
+                        But, 당장은 볼 수 없고 메모리상에서만 존재함
+Surface.blit(표면, 위치)  # 픽셀을 한 표면에서 다른 표면으로 블릿한 것.
+                          ; In 그래픽 프로그래밍,
+                          변수에서 화면으로 / 한 표면에서 다른 표면으로 픽셀을 복사하는 일은 매우 빈번하게 나타남.
+                          # 블리팅(blitting) = 픽셀 복사
+                          cf) 이미지/픽셀들을 한 위치에서 다른 위치로 블릿한다.
+
+# 애니메이션 ; 이미지나 픽셀을 한 장소에서 다른 장소로 움직이는 것
+1. 이전 위치의 대상을 지운다. ; 덧칠
+2. 새로운 위치에 대상을 그린다.
