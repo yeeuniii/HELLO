@@ -218,7 +218,8 @@ while True:
 # help(pygame.draw)
 
 # 2
-import pygame, sys
+import pygame
+import sys
 import os
 os.chdir("C:\\Users\\박예은\\AppData\\Local\\Programs\\Python\\Python37\\One_Big_Archive\\images")
 pygame.init()
@@ -229,7 +230,7 @@ skier_l = pygame.image.load("skier_left2.png")
 x = 50
 y = 50
 x_speed = 10
-screen.blit(skier_r, [50, 50])
+y_speed = 10
 
 while True:
     for event in pygame.event.get():
@@ -237,6 +238,18 @@ while True:
             sys.exit()
 
     pygame.time.delay(20)
+    pygame.draw.rect(screen, [255, 255, 255], [x, y, 44, 56], 0)
+    x = x + x_speed
+    y = y + y_speed
+    if x > screen.get_width() - 44 or x < 0:
+        x_speed = -x_speed
+    if y > screen.get_height() - 56 or y < 0:
+        y_speed = -y_speed
+    if x_speed > 0:
+        screen.blit(skier_r, [x, y])
+    else:
+        screen.blit(skier_l, [x, y])
+    pygame.display.flip()
 
 # 4
 import pygame, sys
