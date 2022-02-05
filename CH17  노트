@@ -2,3 +2,31 @@
 # 하나의 단위로 움직이고 표시되는 픽셀들의 모음, 일종의 그래픽 객체
 1. image - 스프라이트에서 표시되는 그래픽
 2. rect - 스프라이트를 담는 사각형의 영역
+
+충돌검사(Collsion detection)
+: 두 개의 스프라이트가 서로 만나거나 겹치는지 확인하는 작업
+
+# 같은 그룹 안에서 스프라이트 간의 충돌 검사
+1. 스프라이트 하나를 그룹에서 제거
+2. 제거한 스프라이트와 그룹 안의 나머지 스프라이트와의 충돌 검사
+3. 제거했던 스프라이트를 그룹에 다시 추가
+pygame.sprite.spritecollide(sprite, group, False)
+                                           # 스프라이트 그룹내 충돌된 스프라이트의 자동 제거 여부
+                                           # True ; 충돌 발생시 바로 그룹에서 제거됨.
+    # 간단한 사각 영역에 대해서만 충돌검사
+
++ 완전한 픽셀 단위 충돌 검사(pixel-perfect collision detection)
+
+시간 계산
+clock = pygame.time.Clock()
+clock.tick(int.)
+          # 초당 실행돼야 할 반복의 횟수
+          # 20~30fps가 적정
+clock.get_fps()     # 프로그램의 fps 알려줌.
+# 프레임률 조정하기
+new_speed = current_speed + (desired_fps / actual_fps)
+terms.
+프레임(frame) : 애니메이션의 각 단계
+프레임률(frame rate) / 초당 프레임 수(frames per second;fps) : 그래픽의 갱신 속도를 말할 때.
+
+
