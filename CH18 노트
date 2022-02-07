@@ -44,7 +44,7 @@ pygame.event.get() # 이벤트 큐에서 모든 이베트의 리스트를 가져
 - MOUSEBUTTONDOWN   # 마우스 버튼이 눌려짐
 - MOUSEMOTION       # 마우스의 이동 검사
 
-event.pos   # 마우스의 x, y 좌표 위치값
+event.pos   # 마우스의 x, y 좌표 위치값의 리스트
 
 타이머 이벤트
 ## 타이머의 시간이 지나면, 이벤트 루프에서 확인이 가능한 이벤트를 발생시킴
@@ -56,3 +56,16 @@ pygame.time.set_timer(EVENT_NUMBER, interval)
                       pygame.USEREVENT
                       pygame.NUMEVENTS
 
+폰트(font) 모듈
+1. 폰트 객체를 만들고 폰트 종류와 크기를 설정
+# pygame.font.Font(폰트 종류, 폰트 크기)
+                  # None : 파이게임의 기본 폰트 사용
+
+2. 폰트 객체에 문자열을 넘겨서 렌더하면 텍스트가 그려진 표면을 반환
+                        # render : 뭔가를 그려서 보이게 만드는 것
+# render(Text, antialias, color, background=None)
+              # 안티알리아싱(antialiasing)
+              : 선을 그릴때, 픽셀사이에 blur bit를 사용하여 선을 부드럽게 만드는 그래픽 기법 ; True
+                False ; 글자의 선이 매우 투박하게 나타남.
+
+3. 이를 출력 표면에 블릿해줌
